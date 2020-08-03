@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input class="form-control" type="text" id="random-num" name="random" disabled>
+                    <button class="generate-btn" id="pin-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form class="input-section half-width" name="calculator">
+                    <input class="form-control" type="text" name="screen" id="screen-right" />
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div class="button" onclick="screenShow(this.innerHTML)">7</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">8</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button" onclick="screenShow(this.innerHTML)">4</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">5</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button" onclick="screenShow(this.innerHTML)">1</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">2</div>
+                              <div class="button" onclick="screenShow(this.innerHTML)">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button" id="button" onclick="calculator.screen.value = calculator.screen.value.slice(0, -1)"><</div>
+                                <div class="button" onclick="screenShow(this.innerHTML)">0</div>
+                                <div class="button" onclick="calculator.screen.value = ''">C</div>
+                            </div>
+                            <div>
+                                <button type="submit" class="submit-btn" id="submit" onclick="fun()">Submit</button>
+                                <p class="action-left"> <span id="try">3</span> try left</p>
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="notify-section">
+                <p class="notify" id="notify1">❌ Pin Didn't Match, Please try again</p>
+                <p class="notify" id="notify2">✅ Pin Matched... Secret door is opening for you</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="pin.js"></script>
+</body>
+</html>
